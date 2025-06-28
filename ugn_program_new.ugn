@@ -1,0 +1,70 @@
+// ファイルの先頭に新しいコマンド定義を追加
+commander main() {
+    ugn_print("UGN++ Program Started!\n");
+
+    set_threat_level(6);
+    assess_and_act();
+
+    ugn_print("--- Testing functions and variables ---\n");
+    let num_a = 10;
+    let num_b = 20;
+    let total = calculate_sum(num_a, num_b);
+    ugn_print("Sum of " + num_a + " and " + num_b + " is: " + total + "\n");
+
+    ugn_print("--- Looping example ---\n");
+    let counter = 0;
+    while (counter < 3) {
+        ugn_print("Loop iteration: " + counter + "\n");
+        counter = counter + 1;
+    }
+
+    quantum_test_sequence();
+
+    ugn_print("UGN++ Program Finished!\n");
+}
+
+// 既存のコードはそのまま
+
+commander assess_and_act() {
+    let current_threat = get_threat_level();
+    ugn_print("Current threat level: " + current_threat + "\n");
+
+    if (current_threat >= 7) {
+        ugn_print("High threat detected! Activating final trap...\n");
+        activate_final_trap();
+    } else if (current_threat >= 5) {
+        ugn_print("Moderate threat. Deploying honeypot \"alpha_trap_001\".\n");
+        deploy_honeypot("alpha_trap_001");
+    } else {
+        ugn_print("Threat level is low. System is stable.\n");
+    }
+}
+
+fn calculate_sum(a, b) {
+    let result = a + b;
+    return result;
+}
+
+commander quantum_test_sequence() {
+    ugn_print("Starting quantum test sequence...\n");
+
+    let qbit_id_1 = allocate_qbit();
+    let qbit_id_2 = allocate_qbit();
+
+    ugn_print("Measuring qbit " + qbit_id_1 + ": ");
+    let result_1 = measure_qbit(qbit_id_1);
+    ugn_print(result_1 + "\n");
+
+    ugn_print("Applying Hadamard to qbit " + qbit_id_2 + " and measuring: ");
+    apply_hadamard(qbit_id_2);
+    let result_2 = measure_qbit(qbit_id_2);
+    ugn_print(result_2 + "\n");
+
+    deallocate_qbit(qbit_id_1);
+    deallocate_qbit(qbit_id_2);
+
+    ugn_print("Quantum test sequence completed.\n");
+}
+
+// プログラムの開始点として main コマンドを呼び出す
+main();
