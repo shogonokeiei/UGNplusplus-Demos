@@ -155,4 +155,4 @@ The demonstration code within this repository is provided solely to showcase the
 
 Please refer to the LICENSE file for full details.
 
-UGN++ CEO: Shogo Nakamamoto
+UGN++ CEO: Shogo Toda
